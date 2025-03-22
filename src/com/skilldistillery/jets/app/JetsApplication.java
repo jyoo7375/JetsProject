@@ -13,6 +13,8 @@ public class JetsApplication {
 
 	public static void main(String[] args) {
 		scanner = new Scanner(System.in);
+		System.out.println("**WELCOME**");
+		System.out.println("Please select from the menu below:");
 		
 		JetsApplication app = new JetsApplication();
 		app.launch();
@@ -49,6 +51,8 @@ public class JetsApplication {
 				airFields.loadAllCargoJets();
 				break;
 			case 6:
+				airFields.fightReady();
+				
 				break;
 			case 7:
 				break;
@@ -87,7 +91,6 @@ public class JetsApplication {
 	    System.out.println("| 8.  Remove a jet from Fleet               |");
 	    System.out.println("| 9.  Quit                                  |");
 	    System.out.println("+===========================================+");
-		//TODO -sysouts to show main menu
 	}
 
 }

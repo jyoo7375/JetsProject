@@ -99,17 +99,30 @@ public class AirField {
 	
 	public void loadAllCargoJets() {
 		for(Jet jet : fleet) {
-			System.out.println("Checking " + jet.getModel() + " - " + jet.getClass());
 			if(jet instanceof CargoJet) {
-				System.out.println("Is cargo capable");
-				((CargoJet)jet).loadCargo();
-				
-			}else {
-				System.out.println("Not cargo jet");
+				((CargoJet) jet).loadCargo();
 			}
 		}
 
 	}
+	public void fightReady() {
+		List<Jet> fighterJets = new ArrayList<>();
+		
+		for(Jet jet : fleet) {
+			if(jet instanceof FighterJet) {
+				((FighterJet) jet).fight();
+				fighterJets.add(jet);
+				}
+			}
+		if(fighterJets.size() > 0) {
+			int randomWinner = (int)(Math.random() * 3);
+			Jet WinningJet = fighterJets.get(randomWinner);
+			String winner = WinningJet.getModel();
+			System.out.println(winner + " Won the fight!");
+			
+			
+		}
+	}
 	
-
 }
+

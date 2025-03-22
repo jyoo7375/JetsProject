@@ -2,6 +2,8 @@ package com.skilldistillery.jets.app;
 
 import java.util.Scanner;
 
+import com.skilldistillery.jets.entities.CargoJet;
+
 public class JetsApplication {
 	//No jet Collection in the app class
 	//only an Airfield
@@ -37,9 +39,29 @@ public class JetsApplication {
 			case 2:
 				airFields.flyAllJets();
 				break;
+			case 3:
+				airFields.viewFastestJet();
+				break;
+			case 4:
+				airFields.viewLongestRange();
+				break;
+			case 5:
+				airFields.loadAllCargoJets();
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				System.out.println("You choose to quit Good bye!");
+				break;
+				
 				
 			default:
 				System.out.println("Invalid option. Please try again");
+				continue;
 			}
 		}while(choice != 9);
 	

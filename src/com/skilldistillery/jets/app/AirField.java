@@ -58,7 +58,58 @@ public class AirField {
 		for(Jet jet : fleet) {
 			jet.fly();
 		}
+		
+		
+	}
+	public void viewFastestJet() {
+		if(fleet.isEmpty()) {
+			System.out.println("Fleet is empty.");
+			return;
+		}
+		Jet fastestJet = fleet.get(0);
+		
+		for(Jet jet : fleet) {
+			if(jet.getSpeed() > fastestJet.getSpeed()) {
+				fastestJet = jet;
+				
+			}
+		}
+		System.out.println("Fastest Jet: ");
+		System.out.println(fastestJet);
+		
+	
+	
 		// TODO BufferReader recipe here to read from fileName
 	}
+	public void viewLongestRange() {
+		if(fleet.isEmpty()) {
+			System.out.println("Fleet is empty.");
+			return;
+		}
+		Jet longestRange = fleet.get(0);
+		
+		for(Jet jet : fleet) {
+			if(jet.getRange() > longestRange.getRange()) {
+				longestRange = jet;
+			}
+		}
+		System.out.println("Longest range Jet: ");
+		System.out.println(longestRange);
+	}
+	
+	public void loadAllCargoJets() {
+		for(Jet jet : fleet) {
+			System.out.println("Checking " + jet.getModel() + " - " + jet.getClass());
+			if(jet instanceof CargoJet) {
+				System.out.println("Is cargo capable");
+				((CargoJet)jet).loadCargo();
+				
+			}else {
+				System.out.println("Not cargo jet");
+			}
+		}
+
+	}
+	
 
 }

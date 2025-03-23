@@ -36,7 +36,7 @@ public class JetsApplication {
 			switch(choice) {
 			
 			case 1:
-				airFields.listFleet();
+				airFields.listFleet();					 
 				
 				break;
 			case 2:
@@ -60,6 +60,7 @@ public class JetsApplication {
 	
 				break;
 			case 8:
+				airFields.remove();
 				break;
 			case 9:
 				System.out.println("You choose to quit Good bye!");

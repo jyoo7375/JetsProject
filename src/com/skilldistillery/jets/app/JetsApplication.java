@@ -55,6 +55,7 @@ public class JetsApplication {
 				
 				break;
 			case 7:
+				airFields.addJetimpl();
 				break;
 			case 8:
 				break;

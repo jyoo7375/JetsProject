@@ -5,19 +5,34 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.skilldistillery.jets.entities.CargoJet;
 import com.skilldistillery.jets.entities.FighterJet;
 import com.skilldistillery.jets.entities.Jet;
+import com.skilldistillery.jets.entities.Jetimpl;
 
 public class AirField {
+	private Scanner scanner;
 
 	private List<Jet> fleet = new ArrayList<>();
 
 	public AirField() {
+		this.scanner = new Scanner(System.in);
 		// load 5 jets here.
 		//loadJetsFromFile("jetData.txt");
 	}
+	
+	public void listFleet() {
+		if(fleet.isEmpty()) {
+			System.out.println("Fleet is empty.");
+			return;
+		}
+		for(int i = 0; i < fleet.size();i++) {
+			System.out.println((i + 1) + ", "+ fleet.get(i));
+		}
+	}
+
 
 	public void loadJetsFromFile(String fileName) {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("jetData.txt"))) {
@@ -33,7 +48,7 @@ public class AirField {
 				long price = Long.parseLong(fields[4]);
 				switch (type) {
 				case "B":
-					jet = new BusinessJet(model, speed, range, price);
+					jet = new Jetimpl(model, speed, range, price);
 					break;
 				case "C":
 					jet = new CargoJet(model, speed, range, price);
@@ -123,9 +138,28 @@ public class AirField {
 			
 		}
 	}
-	public void add() {
-	 
-	}
+	public void addJetimpl() {
+		
+		System.out.println("Enter model:");
+		String model = scanner.nextLine();
+		
+		System.out.println("Enter the speed (mph): ");
+		double speed = scanner.nextDouble();
+		scanner.nextLine();
+		
+		System.out.println("Enter the range (miles)");
+		int range = scanner.nextInt();
+		scanner.nextLine();
+		
+		System.out.println("Enter the price:");
+		long price = scanner.nextLong();
+		scanner.nextLine();
+		
+		Jet jet = new Jetimpl(model, speed, range, price);
+		
+		fleet.add(jet);
+	
+		}
 	
 	public void remove() {
 		

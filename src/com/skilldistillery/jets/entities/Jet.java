@@ -3,7 +3,7 @@ package com.skilldistillery.jets.entities;
 public abstract class Jet {
 
 	private String model;
-	private Double speed;
+	private double speed;
 	private int range;
 	private long price;
 
@@ -17,11 +17,12 @@ public abstract class Jet {
 
 	public void fly() {
 		System.out.println(
-				model + " is flying at " + speed + " mph and its range is " + range + " " + "and it costs " + price);
+				model + " is flying at " + speed + " mph ");
+		System.out.printf("%.2f in Mach, and its range is %d miles, and it costs $%,d\n", getSpeedInMach(), range, price);
 	}
 
 	public double getSpeedInMach() {
-		return 767.0;
+		return speed /767.0;
 	}
 
 	public String getModel() {

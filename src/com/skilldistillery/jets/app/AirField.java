@@ -20,8 +20,6 @@ public class AirField {
 	public AirField() {
 		this.scanner = new Scanner(System.in);
 		loadJetsFromFile("JetData.txt");
-		// load 5 jets here.
-		// loadJetsFromFile("jetData.txt");
 	}
 
 	public void listFleet() {
@@ -103,7 +101,6 @@ public class AirField {
 		System.out.println("Fastest Jet: ");
 		System.out.println(fastestJet);
 
-		// TODO BufferReader recipe here to read from fileName
 	}
 
 	public void viewLongestRange() {

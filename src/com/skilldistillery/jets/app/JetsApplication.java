@@ -36,7 +36,8 @@ public class JetsApplication {
 			switch(choice) {
 			
 			case 1:
-				airFields.loadJetsFromFile("jetData.txt");
+				airFields.listFleet();
+				
 				break;
 			case 2:
 				airFields.flyAllJets();
@@ -55,7 +56,8 @@ public class JetsApplication {
 				
 				break;
 			case 7:
-				airFields.addJetimpl();
+				airFields.addJet();
+	
 				break;
 			case 8:
 				break;

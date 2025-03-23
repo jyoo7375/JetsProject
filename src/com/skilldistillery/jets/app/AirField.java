@@ -19,6 +19,7 @@ public class AirField {
 
 	public AirField() {
 		this.scanner = new Scanner(System.in);
+		loadJetsFromFile("JetData.txt");
 		// load 5 jets here.
 		//loadJetsFromFile("jetData.txt");
 	}
@@ -138,32 +139,60 @@ public class AirField {
 			
 		}
 	}
-	public void addJetimpl() {
+	public void addJet() {
+		System.out.println("Select Jet type to add:");
+		System.out.println("1. Fighter Jet");
+		System.out.println("2. Cargo Jet");
+		System.out.println("1. Standard Jet");
+		
+		int Choice = scanner.nextInt();
+		scanner.nextLine();
 		
 		System.out.println("Enter model:");
 		String model = scanner.nextLine();
 		
-		System.out.println("Enter the speed (mph): ");
+		System.out.println("Enter speed (mph):");
 		double speed = scanner.nextDouble();
 		scanner.nextLine();
 		
-		System.out.println("Enter the range (miles)");
+		System.out.println("Enter range in miles");
 		int range = scanner.nextInt();
 		scanner.nextLine();
 		
-		System.out.println("Enter the price:");
+		System.out.println("Enter price: ");
 		long price = scanner.nextLong();
 		scanner.nextLine();
 		
-		Jet jet = new Jetimpl(model, speed, range, price);
+		Jet newJet = null;
 		
-		fleet.add(jet);
+		switch (Choice) {
+		case 1:
+			newJet = new FighterJet(model, speed, range, price);
+			break;
+		case 2:
+			newJet = new CargoJet(model, speed, range, price);
+			break;
+		case 3:
+			newJet = new Jetimpl(model, speed, range, price);
+			break;
+		default:
+			System.out.println("Invalid choice Jet has not been added.");
+			return;
+		
+		}
+		
+		fleet.add(newJet);
+		System.out.println("Jet has been successfully added!");
+		
+
 	
 		}
 	
 	public void remove() {
 		
 	}
+
+	
 	
 }
 

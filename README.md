@@ -11,14 +11,14 @@
 - Git/Github
 - Sublime
 - Interface
-- List
-- Switch
+- List (ArrayList)
+- Switch statements
 - buffer reader
-- try/catch 
+- try/catch blocks
 - for loops
 
 ## Lessons Learned
-- Practiced working with ArrayLists
+- Practiced working with ArrayLists to store jets
 - Learned how to read a data from a .txt file using the BufferedReader
 - Applied instanceof to identify object types
 - Using System.outprintf() formats the code in a cleaner way

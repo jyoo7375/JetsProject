@@ -15,5 +15,10 @@
 - Switch
 - buffer reader
 - try/catch 
+- for loops
 
 ## Lessons Learned
+- Practiced working with ArrayLists
+- Learned how to read a data from a .txt file using the BufferedReader
+- Applied instanceof to identify object types
+- Using System.outprintf() formats the code in a cleaner way
